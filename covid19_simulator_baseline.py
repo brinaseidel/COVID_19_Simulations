@@ -3,7 +3,9 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 # Read in origin-destination flow matrix
-OD = np.genfromtxt('data/Yerevan_OD_coronavirus.csv', delimiter=',')
+#OD = np.genfromtxt('data/Yerevan_OD_coronavirus.csv', delimiter=',')
+OD = np.genfromtxt('data/nyc_od.csv', delimiter=',')
+
 
 # initialize the population vector from the origin-destination flow matrix
 N_k = np.abs(np.diagonal(OD) + OD.sum(axis=0) - OD.sum(axis=1))
