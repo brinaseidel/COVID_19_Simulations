@@ -99,7 +99,7 @@ def covid_sim(args):
     gamma = args.gamma
     public_trans = args.public_trans                                 # alpha
     R0 = beta/gamma
-    beta_vec = np.random.gamma(1.6, 2, locs_len)
+    beta_vec = np.random.gamma(beta, 2, locs_len)
     gamma_vec = np.full(locs_len, gamma)
     public_trans_vec = np.full(locs_len, public_trans)
 
@@ -168,9 +168,10 @@ if __name__ == '__main__':
     parser.add_argument('--thresh1', type=int, default=0)
     parser.add_argument('--thresh2', type=int, default=200)
     parser.add_argument('--infection-magnitude', type=int, default=10)
-    parser.add_argument('--beta', type=float, default=1.6)
-    parser.add_argument('--gamma', type=float, default=0.04)
-    parser.add_argument('--public-trans', type=float, default=0.5)
+    parser.add_argument('--beta', type=float, default=0.75)
+    parser.add_argument('--gamma', type=float, default=0.2)
+    parser.add_argument('--public-trans', type=float, default=0.56)
+    parser.add_argument('--public-trans-vec', type=float, default=0.56)
     parser.add_argument('--days', type=int, default=100)
     parser.add_argument('--img-folder', default='figures/')
 
